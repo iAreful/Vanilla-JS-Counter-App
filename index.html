@@ -1,0 +1,139 @@
+<!-- @format -->
+
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Vanilla JS Counter App</title>
+		<link rel="stylesheet" href="./css/style.css" />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,700;0,900;1,700&display=swap"
+			rel="stylesheet"
+		/>
+	</head>
+	<body>
+		<section
+			class="container mx-auto sm:w-1/2 md:w-1/2 w-4/5 flex flex-row md:flex-col lg:flex-col items-center justify-center border p-6 rounded-xl mt-20 bg-gradient-to-tr from-pink-300 via-purple-300 to-indigo-400"
+		>
+			<div class="">
+				<h2
+					class="text-bold sm:text-3xl text-2xl text-center my-4 font-bold text-white font-serif leading-5"
+				>
+					Counter App
+				</h2>
+				<h1
+					id="count"
+					class="count sm:text-6xl text-4xl text-center my-4 text-white"
+				>
+					0
+				</h1>
+			</div>
+			<div
+				id="buttons"
+				class="buttons sm:space-x-0 md:space-x-2 lg:space-x-4 space-x-0 sm:mt-4 mt-0 sm:ml-4 ml-4 flex sm:flex-col md:flex-row lg:flex-row flex-col sm:space-y-4 md:space-y-0 lg:space-y-0 space-y-2"
+			>
+				<button
+					class="minus bg-red-400 hover:bg-red-600 text-white font-bold sm:py-2 py-0 sm:px-4 px-2 rounded inline-flex items-center"
+				>
+					<svg
+						xmlns="http://www.w3.org/2000/svg"
+						class="sm:h-5 sm:w-5 mr-1 shrink h-3 w-3"
+						viewBox="0 0 20 20"
+						fill="currentColor"
+					>
+						<path
+							fill-rule="evenodd"
+							d="M3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z"
+							clip-rule="evenodd"
+						/>
+					</svg>
+					<span>Minus</span>
+				</button>
+
+				<button
+					class="reset bg-white text-gray-800 font-bold sm:py-2 py-0 sm:px-4 px-2 rounded inline-flex items-center"
+				>
+					<svg
+						xmlns="http://www.w3.org/2000/svg"
+						class="h-5 w-5 mr-1 shrink"
+						viewBox="0 0 20 20"
+						fill="currentColor"
+					>
+						<path
+							fill-rule="evenodd"
+							d="M4 2a1 1 0 011 1v2.101a7.002 7.002 0 0111.601 2.566 1 1 0 11-1.885.666A5.002 5.002 0 005.999 7H9a1 1 0 010 2H4a1 1 0 01-1-1V3a1 1 0 011-1zm.008 9.057a1 1 0 011.276.61A5.002 5.002 0 0014.001 13H11a1 1 0 110-2h5a1 1 0 011 1v5a1 1 0 11-2 0v-2.101a7.002 7.002 0 01-11.601-2.566 1 1 0 01.61-1.276z"
+							clip-rule="evenodd"
+						/>
+					</svg>
+					<span>Reload</span>
+				</button>
+
+				<button
+					class="add bg-green-400 hover:bg-green-600 text-white font-bold sm:py-2 py-0 sm:px-4 px-2 rounded inline-flex items-center"
+				>
+					<svg
+						xmlns="http://www.w3.org/2000/svg"
+						class="h-5 w-5 mr-1"
+						viewBox="0 0 20 20"
+						fill="currentColor"
+					>
+						<path
+							fill-rule="evenodd"
+							d="M10 3a1 1 0 011 1v5h5a1 1 0 110 2h-5v5a1 1 0 11-2 0v-5H4a1 1 0 110-2h5V4a1 1 0 011-1z"
+							clip-rule="evenodd"
+						/>
+					</svg>
+					<span>Add</span>
+				</button>
+			</div>
+		</section>
+		<script>
+			// const count = document.getElementById("count");
+			// const buttons = document.getElementById("buttons");
+
+			// buttons.addEventListener("click", (e) => {
+			// 	if (e.target.classList.contains("add")) {
+			// 		count.innerHTML++;
+			// 	}
+			// 	if (e.target.classList.contains("reaload")) {
+			// 		count.innerHTML--;
+			// 	}
+			// 	if (e.target.classList.contains("reset")) {
+			// 		count.innerHTML = 0;
+			// 		setColor();
+			// 	}
+			// });
+
+			const add = document.querySelector(".add");
+			const resetCount = document.querySelector(".reset");
+			const sub = document.querySelector(".minus");
+			// const count = document.querySelector(".count");
+			// const buttons = document.querySelector(".buttons");
+			add.addEventListener("click", () => {
+				count.innerHTML++;
+				setColor();
+			});
+
+			sub.addEventListener("click", () => {
+				count.innerHTML--;
+				setColor();
+			});
+			resetCount.addEventListener("click", () => {
+				count.innerHTML = 0;
+				setColor();
+			});
+
+			function setColor() {
+				if (count.innerHTML > 0) {
+					count.style.color = "#fff";
+				} else if (count.innerHTML < 0) {
+					count.style.color = "orangered";
+				} else {
+					count.style.color = "#000";
+				}
+			}
+		</script>
+	</body>
+</html>
